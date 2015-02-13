@@ -31,11 +31,31 @@ id="WebApp_ID" version="3.0"
       <param-name>mainEmail</param-name>
       <param-value>blooper@wickedlysmart.com</param-value>
     </init-param>
-    <!-- <load-on-startup>1</load-on-startup> -->
   </servlet>
   
   <servlet-mapping>
     <servlet-name>BeerParamTests</servlet-name>
     <url-pattern>/Tester.do</url-pattern>
   </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>ListenerTester</servlet-name>
+    <servlet-class>org.mycompany.webservices.ListenerTester</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+    <servlet-name>ListenerTester</servlet-name>
+    <url-pattern>/ListenerTest.do</url-pattern>
+  </servlet-mapping>
+  
+  <context-param>
+  	<param-name>breed</param-name>
+  	<param-value>Great Dane</param-value>
+  </context-param>
+  
+  <listener>
+  	<listener-class>
+  		org.mycompany.webservices.listener.MyServletContextListener
+  	</listener-class>
+  </listener>
 </web-app>
