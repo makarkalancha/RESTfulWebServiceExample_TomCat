@@ -19,7 +19,13 @@
 				<a href="Tester.do">test init paramters</a>
 			</li>
 			<li>
+				<a href="beer_select.jsp">beer select form</a>
+			</li>
+			<li>
 				<a href="ListenerTest.do">test context attributes set by listener</a>
+			</li>
+			<li>
+				<a href="GetMeSession">get my session</a>
 			</li>
 		</ol> 
 	</body>
