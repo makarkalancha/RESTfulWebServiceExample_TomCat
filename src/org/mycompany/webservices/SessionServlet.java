@@ -33,8 +33,6 @@ public class SessionServlet extends HttpServlet {
 		
 		// version 2
 		HttpSession session = request.getSession(false);
-//		session.setMaxInactiveInterval((int)TimeUnit.MINUTES.toSeconds(1));
-//		session.setMaxInactiveInterval(20);
 		//Paramètres->Afficher les paramètres avancés->
 		//"Confidentialité"-->Paramètres de contenu->
 		//activer --> Autoriser le stockage des données locales (recommandé).
@@ -42,8 +40,10 @@ public class SessionServlet extends HttpServlet {
 		if(session == null){
 			//without cookies always new session
 			printWriter.println("no session was available<br>");
-			printWriter.println("making one...<br>");
+			printWriter.println("making one for 20 seconds...<br>");
 			session = request.getSession();
+//			session.setMaxInactiveInterval((int)TimeUnit.MINUTES.toSeconds(1));
+			session.setMaxInactiveInterval(20);
 		} else { 
 			printWriter.println("there was a session<br>");
 		}
