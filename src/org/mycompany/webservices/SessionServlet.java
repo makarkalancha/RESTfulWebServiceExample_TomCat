@@ -2,6 +2,7 @@ package org.mycompany.webservices;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.concurrent.TimeUnit;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -32,7 +33,14 @@ public class SessionServlet extends HttpServlet {
 		
 		// version 2
 		HttpSession session = request.getSession(false);
+//		session.setMaxInactiveInterval((int)TimeUnit.MINUTES.toSeconds(1));
+//		session.setMaxInactiveInterval(20);
+		//Paramètres->Afficher les paramètres avancés->
+		//"Confidentialité"-->Paramètres de contenu->
+		//activer --> Autoriser le stockage des données locales (recommandé).
+		//désactiver --> Interdire à tous les sites de stocker des données.
 		if(session == null){
+			//without cookies always new session
 			printWriter.println("no session was available<br>");
 			printWriter.println("making one...<br>");
 			session = request.getSession();
