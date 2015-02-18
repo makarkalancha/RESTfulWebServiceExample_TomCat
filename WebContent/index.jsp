@@ -25,7 +25,7 @@
 				<a href="ListenerTest.do">test context attributes set by listener</a>
 			</li>
 			<li>
-				<a href="GetMeSession">get my session</a>
+				<a href="GetMeSession">get my session (plus HttpSessionBindingListener, HttpSessionListener, HttpSessionAttributeListener)</a>
 			</li>
 			<li>
 				<form name="cookie_test" action="Cookie.do" method="post">

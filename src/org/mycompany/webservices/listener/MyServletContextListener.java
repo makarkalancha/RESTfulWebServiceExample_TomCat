@@ -4,6 +4,7 @@ import javax.servlet.ServletContext;
 import javax.servlet.ServletContextEvent;
 import javax.servlet.ServletContextListener;
 
+import org.apache.log4j.Logger;
 import org.mycompany.webservices.entity.Dog;
 
 /**
@@ -12,19 +13,25 @@ import org.mycompany.webservices.entity.Dog;
  * Time: 12:46:23 PM
  */
 public class MyServletContextListener implements ServletContextListener{
+	//ServletContextListener -- You want to know if a context has been created or destroyed
+	//You want to know if a context has been created or destroyed
+	//can be used to perform an action when the servlet context is about to be shut down.
 
+	public static final Logger LOG = Logger.getLogger(MyServletContextListener.class);
+	
 	@Override
 	public void contextDestroyed(ServletContextEvent arg0) {
-		// TODO Auto-generated method stub
-		
+		LOG.info("context Destroyed");	
 	}
 
 	@Override
 	public void contextInitialized(ServletContextEvent arg0) {
 		ServletContext sc = arg0.getServletContext();
 		String dogBreed = sc.getInitParameter("breed");
-		Dog d = new Dog(dogBreed);
-		sc.setAttribute("dog", d);
+		Dog dog = new Dog(dogBreed);
+		sc.setAttribute("dog", dog);
+		
+		LOG.info("context Initialized: Dog-->"+dog);
 	}
 }
 

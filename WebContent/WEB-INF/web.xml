@@ -87,4 +87,18 @@
   		org.mycompany.webservices.listener.MyServletContextListener
   	</listener-class>
   </listener>
+  <listener>
+    <listener-class>
+  		org.mycompany.webservices.listener.BeerSessionCounter
+  	</listener-class>
+  </listener>
+  <listener>
+    <listener-class>
+  		org.mycompany.webservices.listener.BeerAttributeListener
+  	</listener-class>
+  </listener>
+  <!-- session config max 1 min -->
+  <session-config>
+  	<session-timeout>1</session-timeout>
+  </session-config>
 </web-app>
