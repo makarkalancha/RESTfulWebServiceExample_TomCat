@@ -27,6 +27,12 @@
 			<li>
 				<a href="GetMeSession">get my session</a>
 			</li>
+			<li>
+				<form name="cookie_test" action="Cookie.do" method="post">
+					username: <input type="text" name="username">
+					<input type="submit" value="Submit User To Check Cookie">
+				</form>
+			</li>
 		</ol> 
 	</body>
 	<script type="text/javascript">
