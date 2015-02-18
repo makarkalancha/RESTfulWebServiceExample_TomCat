@@ -1,0 +1,22 @@
+--log4j.jar and property file put into:
+D:\SRC\apps\Apache Tomcat 7.0.41\lib
+--jar file should appear in Build path->Libraries->Apache Tomcat
+--restart server and re-run web-app
+
+
+--property file 
+# set root logger level to DEBUG
+log4j.rootCategory=DEBUG, console, myFile
+log4j.appender.console=org.apache.log4j.ConsoleAppender
+log4j.appender.console.layout=org.apache.log4j.PatternLayout
+log4j.appender.console.layout.ConversionPattern=[%d{YYYY/MM/dd HH:mm:ss.SSS} %-5p %c{1}]: %m%n
+
+# myFile writes to file
+log4j.appender.myFile=org.apache.log4j.RollingFileAppender
+log4j.appender.myFile.File=log/RESTfulWebServiceExample_TomCat.log
+log4j.appender.myFile.MaxFileSize=30MB
+log4j.appender.myFile.layout=org.apache.log4j.PatternLayout
+log4j.appender.myFile.layout.ConversionPattern=[%d{YYYY/MM/dd HH:mm:ss.SSS} %-5p %c{1}]: %m%n
+
+--log/RESTfulWebServiceExample_TomCat.log path:
+C:\Program Files (x86)\Eclipse\log\RESTfulWebServiceExample_TomCat.log

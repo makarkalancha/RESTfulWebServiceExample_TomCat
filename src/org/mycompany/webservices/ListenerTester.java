@@ -8,6 +8,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.apache.log4j.Logger;
 import org.mycompany.webservices.entity.Dog;
 
 /**
@@ -16,7 +17,8 @@ import org.mycompany.webservices.entity.Dog;
  * Time: 12:52:31 PM
  */
 public class ListenerTester extends HttpServlet{
-
+	private final Logger LOG = Logger.getLogger(ListenerTester.class);
+	
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp)
 			throws ServletException, IOException {
@@ -28,6 +30,7 @@ public class ListenerTester extends HttpServlet{
 		
 		Dog dog = (Dog) getServletContext().getAttribute("dog");
 		out.println("Dog's breed is "+dog.getBreed());
+		LOG.info("ListenerTester: doGet, breed:"+dog.getBreed());
 	}
 }
 
